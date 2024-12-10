@@ -10,7 +10,7 @@
 
 - An input field of the new task
 - List of all tasks
-- Separate filters to show lists of `Completed` and `In Progress` tasks
+- Separate filters to show lists of `Completed` and `Active` tasks
 - Implemented Unit Tests
 - Utilized React Hooks
 
