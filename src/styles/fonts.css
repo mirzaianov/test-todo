@@ -1,0 +1,9 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Helvetica Neue UltraLight';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Helvetica Neue UltraLight'), local('Helvetica-Neue-UltraLight'),
+    local('HelveticaNeue UltraLight'), local('HelveticaNeue-UltraLight');
+  src: url('../assets/fonts/Helvetica-Neue-UltraLight.ttf') format('truetype');
+}
