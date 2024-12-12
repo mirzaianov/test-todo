@@ -1,20 +1,3 @@
-.btn {
-  cursor: pointer;
-  font-size: 14px;
-  padding: 3px 7px;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: var(--color-primary-15);
-  }
-
-  &:active {
-    scale: 0.9;
-  }
-}
-
 .btnActive {
-  border-color: var(--color-primary-15);
+  border-color: var(--color-primary-15) !important;
 }

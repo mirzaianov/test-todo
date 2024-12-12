@@ -45,7 +45,7 @@ export default function Status({
         />
       </div>
       <button
-        className={styles.btn}
+        className="btn"
         onClick={clearCompleted}
       >
         Clear completed

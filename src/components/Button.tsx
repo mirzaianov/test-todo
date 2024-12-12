@@ -19,7 +19,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={clsx(styles.btn, filter === filterType && styles.btnActive)}
+      className={clsx('btn', filter === filterType && styles.btnActive)}
       onClick={() => setFilter(filterType)}
     >
       {text}

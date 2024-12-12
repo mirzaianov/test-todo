@@ -8,3 +8,20 @@ body {
   background-color: var(--color-neutral-10);
   color: var(--color-text-60);
 }
+
+.btn {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 3px 7px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-primary-15);
+  }
+
+  &:active {
+    scale: 0.9;
+  }
+}
