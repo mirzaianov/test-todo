@@ -20,18 +20,14 @@ textarea {
   outline: none;
   font-size: inherit;
   font-family: inherit;
-  font-weight: 400;
 
   &::placeholder {
     font-family: inherit;
     font-size: inherit;
-    font-weight: 400;
   }
 }
 
-button,
-input[type='submit'],
-input[type='reset'] {
+button {
   background: none;
   color: inherit;
   border: none;
