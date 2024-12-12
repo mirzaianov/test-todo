@@ -35,6 +35,7 @@ export default function Input({
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && addTodo(inputValue)}
         placeholder="What needs to be done?"
+        autoFocus
       />
       {inputValue && (
         <button
