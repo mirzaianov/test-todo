@@ -63,6 +63,9 @@
 .text {
   word-break: break-all;
   transition: color 0.4s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .textCompleted {

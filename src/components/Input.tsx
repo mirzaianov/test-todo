@@ -21,12 +21,13 @@ export default function Input({
     <div className={styles.wrapper}>
       <button
         className={clsx(
+          styles.btn,
           styles.dropdownBtn,
           isExpanded && styles.dropdownBtnExpanded,
         )}
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        ❯
+        <div>❯</div>
       </button>
       <input
         className={styles.input}
@@ -39,10 +40,10 @@ export default function Input({
       />
       {inputValue && (
         <button
-          className={styles.addBtn}
+          className={clsx(styles.btn, styles.addBtn)}
           onClick={() => addTodo(inputValue)}
         >
-          +
+          <span>+</span>
         </button>
       )}
     </div>

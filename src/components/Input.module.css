@@ -2,17 +2,30 @@
   position: relative;
   display: flex;
   align-items: center;
+  height: var(--item-height);
+}
+
+.btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--icon-width);
+  height: 100%;
+  color: var(--color-text-40);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-text-50);
+  }
 }
 
 .dropdownBtn {
-  width: 60px;
-  height: 34px;
-  font-size: 22px;
-  color: #e6e6e6;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease-out;
+  transition: all 0.3s ease-out;
+
+  & > div {
+    line-height: 0;
+    scale: 1.5;
+  }
 }
 
 .dropdownBtnExpanded {
@@ -22,29 +35,26 @@
 .input {
   flex-grow: 1;
   font-size: 24px;
-  padding: 16px;
   border: none;
-  background: rgba(0, 0, 0, 0.003);
+  color: var(--color-text-60);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   &::placeholder {
     font-style: italic;
-    color: #e6e6e6;
+    color: var(--color-text-40);
   }
 }
 
 .addBtn {
-  position: absolute;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  font-size: 30px;
-  color: #e6e6e6;
-  background: none;
-  border: none;
-  cursor: pointer;
   transition: color 0.3s ease;
 
-  &:hover {
-    color: #737373;
+  & > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 2.5rem;
   }
 }

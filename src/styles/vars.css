@@ -1,4 +1,5 @@
 :root {
+  /* colors */
   --color-neutral-00: #fefefe;
   --color-neutral-10: #f5f5f5;
 
@@ -8,4 +9,9 @@
   --color-text-50: #777777;
   --color-text-60: #4d4d4d;
   --color-text-15: #ecd7d7;
+
+  /* sizes */
+  --item-height: 3.75rem;
+  --icon-width: var(--item-height);
+  --icon-height: var(--item-height);
 }
