@@ -11,13 +11,12 @@
   color: #e6e6e6;
   background: none;
   border: none;
-  transform: rotate(90deg);
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease-out;
 }
 
 .dropdownBtnExpanded {
-  color: #737373;
+  transform: rotate(90deg);
 }
 
 .input {
