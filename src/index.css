@@ -3,7 +3,8 @@
 @import './styles/reset.css';
 
 body {
-  font-family: 'Helvetica Neue UltraLight', system-ui;
+  font-family: 'Helvetica Neue Light', system-ui;
+  font-weight: 300;
   background-color: var(--color-neutral-10);
   color: var(--color-text-50);
 }
