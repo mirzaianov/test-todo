@@ -1,0 +1,33 @@
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  height: 40px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #e6e6e6;
+}
+
+.items {
+  flex: 1;
+}
+
+.filters {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn {
+  cursor: pointer;
+  color: #777;
+  font-size: 14px;
+  flex: 1;
+  transition: color 0.3s ease;
+
+  :hover {
+    color: #333;
+  }
+}

@@ -1,0 +1,52 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownBtn {
+  width: 60px;
+  height: 34px;
+  font-size: 22px;
+  color: #e6e6e6;
+  background: none;
+  border: none;
+  transform: rotate(90deg);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dropdownBtnExpanded {
+  color: #737373;
+}
+
+.input {
+  flex-grow: 1;
+  font-size: 24px;
+  padding: 16px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+
+  ::placeholder {
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
+  }
+}
+
+.addBtn {
+  position: absolute;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: #e6e6e6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  :hover {
+    color: #737373;
+  }
+}
