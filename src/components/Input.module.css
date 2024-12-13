@@ -4,7 +4,7 @@
   align-items: center;
   height: var(--input-height);
   padding: 0 1rem;
-  gap: 1rem;
+  gap: 1.6rem;
 }
 
 .btn {
@@ -52,6 +52,7 @@
   white-space: nowrap;
 
   &::placeholder {
+    transform: translateX(-0.2rem);
     font-style: italic;
     color: var(--color-text-40);
   }
