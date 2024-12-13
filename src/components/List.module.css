@@ -17,22 +17,27 @@
 }
 
 .item {
+  height: var(--item-height);
   display: flex;
+  gap: 1.25rem;
   align-items: center;
-  padding: 15px 15px 15px 60px;
+  padding: 0 1rem 0 0.5rem;
   position: relative;
   font-size: 24px;
   border-bottom: 1px solid #ededed;
 }
 
 .checkbox {
-  position: absolute;
-  left: 15px;
-  height: 40px;
-  width: 40px;
+  flex-shrink: 0;
+  height: 1.875rem;
+  width: 1.875rem;
+  display: grid;
+  place-items: center;
+  grid-template-areas: 'check';
 }
 
 .input {
+  grid-area: check;
   opacity: 0;
   cursor: pointer;
   height: 0;
@@ -40,24 +45,22 @@
 }
 
 .check {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  width: 30px;
+  grid-area: check;
+  width: 100%;
+  height: 100%;
   border: 1px solid #e6e6e6;
   border-radius: 50%;
 }
 
 .input:checked ~ .check:after {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  grid-area: check;
   content: '✓';
-  position: absolute;
-  display: block;
   color: #5dc2af;
   font-size: 20px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .text {

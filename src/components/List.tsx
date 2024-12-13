@@ -30,7 +30,7 @@ export default function List({
                 checked={todo.completed}
                 onChange={() => toggleTodo(todo.id)}
               />
-              <span className={styles.check}></span>
+              <div className={styles.check}></div>
             </label>
             <span
               className={clsx(
