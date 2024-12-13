@@ -11,7 +11,9 @@
   --color-text-15: #ecd7d7;
 
   /* sizes */
-  --item-height: 3.75rem;
-  --icon-width: var(--item-height);
-  --icon-height: var(--item-height);
+  --input-height: 4rem;
+  --item-height: 3.5rem;
+  --status-height: 2.5rem;
+  --icon-width: var(--input-height);
+  --icon-height: var(--input-height);
 }
