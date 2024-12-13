@@ -19,7 +19,7 @@
 .item {
   height: var(--item-height);
   display: flex;
-  gap: 1.25rem;
+  gap: 1.375rem;
   align-items: center;
   padding: 0 1rem 0 0.5rem;
   position: relative;
