@@ -1,15 +1,16 @@
 .app {
-  max-width: 34.5rem;
+  max-width: 36.5rem;
   margin: 5rem auto;
   padding: 0 1rem;
 }
 
 .title {
   font-family: 'Helvetica Neue UltraLight', system-ui;
-  font-size: 6rem;
+  font-size: 6.25rem;
   font-weight: 100;
   text-align: center;
   color: var(--color-text-15);
+  margin-bottom: 0.3rem;
 }
 
 .content {
