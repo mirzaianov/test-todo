@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: var(--item-height);
+  height: var(--input-height);
 }
 
 .btn {
@@ -13,6 +13,7 @@
   height: 100%;
   color: var(--color-text-40);
   cursor: pointer;
+  transition: all 0.3s ease-out;
 
   &:hover {
     color: var(--color-text-50);
@@ -20,8 +21,6 @@
 }
 
 .dropdownBtn {
-  transition: all 0.3s ease-out;
-
   & > div {
     line-height: 0;
     scale: 1.5;
@@ -48,7 +47,10 @@
 }
 
 .addBtn {
-  transition: color 0.3s ease;
+  &:active {
+    scale: 1.5;
+    opacity: 0;
+  }
 
   & > span {
     position: absolute;
