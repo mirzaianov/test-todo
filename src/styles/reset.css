@@ -16,6 +16,7 @@ h6 {
 
 input,
 textarea {
+  padding: 0;
   resize: none;
   outline: none;
   font-size: inherit;
