@@ -11,10 +11,10 @@ body {
 
 .btn {
   cursor: pointer;
-  font-size: 14px;
-  padding: 3px 7px;
-  border: 1px solid transparent;
-  border-radius: 3px;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.25rem;
   transition: all 0.3s ease;
 
   &:hover {
@@ -22,6 +22,6 @@ body {
   }
 
   &:active {
-    scale: 0.9;
+    scale: 1.1;
   }
 }
