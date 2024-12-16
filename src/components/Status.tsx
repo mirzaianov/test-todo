@@ -13,6 +13,20 @@ type StatusProps = {
   clearCompleted: () => void;
 };
 
+function StatusView({ activeTodos }: { activeTodos: Todos }) {
+  if (activeTodos.length === 0) {
+    return <span className={styles.items}>All clear</span>;
+  }
+
+  if (activeTodos.length === 1) {
+    return <span className={styles.items}>1 item left</span>;
+  }
+
+  return (
+    <span className={styles.items}>{`${activeTodos.length} items left`}</span>
+  );
+}
+
 export default function Status({
   activeTodos,
   filter,
@@ -21,11 +35,7 @@ export default function Status({
 }: StatusProps) {
   return (
     <div className={styles.status}>
-      <span className={styles.items}>
-        {activeTodos.length === 1
-          ? '1 item left'
-          : `${activeTodos.length} items left`}
-      </span>
+      <StatusView activeTodos={activeTodos} />
       <div className={styles.filters}>
         <Button
           filter={filter}

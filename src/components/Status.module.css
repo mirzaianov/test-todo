@@ -10,11 +10,15 @@
   border-top: 1px solid var(--color-neutral-10);
 }
 
+.items {
+  flex: 1;
+}
+
 .filters {
   flex: 2;
   display: flex;
-  padding-left: 6.365rem;
-  /* justify-content: center; */
+  padding-left: 2.75rem;
+  justify-content: left;
   gap: 0.575rem;
 }
 
