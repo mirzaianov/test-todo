@@ -12,7 +12,7 @@ body {
 .btn {
   cursor: pointer;
   font-size: 0.875rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.45rem;
   border: 0.1rem solid transparent;
   border-radius: 0.25rem;
   transition: all 0.3s ease;

@@ -3,20 +3,17 @@
   justify-content: space-between;
   align-items: center;
   height: var(--status-height);
-  padding: 0 0.5rem 0 1rem;
+  padding: 0 0.40625rem 0 0.9375rem;
   height: 40px;
   font-size: 14px;
   color: var(--color-text-50);
   border-top: 1px solid var(--color-neutral-10);
 }
 
-.items {
-  flex: 1;
-}
-
 .filters {
   flex: 2;
   display: flex;
-  justify-content: center;
-  gap: 8px;
+  padding-left: 6.365rem;
+  /* justify-content: center; */
+  gap: 0.575rem;
 }
