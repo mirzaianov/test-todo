@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { type Todos, type Filter } from '../types/types';
 
 import Button from './Button';
@@ -45,7 +47,7 @@ export default function Status({
         />
       </div>
       <button
-        className="btn"
+        className={clsx('btn', styles.btnClear)}
         onClick={clearCompleted}
       >
         Clear completed

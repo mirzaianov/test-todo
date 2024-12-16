@@ -17,3 +17,9 @@
   /* justify-content: center; */
   gap: 0.575rem;
 }
+
+.btnClear {
+  &:hover {
+    background-color: var(--color-neutral-40) !important;
+  }
+}
