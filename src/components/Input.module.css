@@ -5,7 +5,7 @@
   height: var(--input-height);
   padding: 0 1rem;
   gap: 1.8rem;
-  box-shadow: inset 0px -1px 2px 0px var(--color-secondary-75);
+  box-shadow: inset 0rem -0.0625rem 0.125rem 0rem var(--color-secondary-75);
 }
 
 .btn {

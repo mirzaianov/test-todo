@@ -5,7 +5,7 @@
 }
 
 .wrapper:has(*:not(:empty)) {
-  border-top: 1px solid var(--color-neutral-40);
+  border-top: 0.0625rem solid var(--color-neutral-40);
 }
 
 .wrapperExpanded {
@@ -23,13 +23,12 @@
   align-items: center;
   padding: 0 1rem 0 0.5rem;
   position: relative;
-  font-size: 24px;
-  border-bottom: 1px solid var(--color-neutral-40);
+  font-size: 1.5rem;
+  border-bottom: 0.0625rem solid var(--color-neutral-40);
 }
 
 .checkbox {
   flex-shrink: 0;
-  /* height: 1.875rem; */
   width: 1.875rem;
   display: grid;
   place-items: center;
@@ -49,7 +48,7 @@
   grid-area: check;
   width: 100%;
   height: 1.875rem;
-  border: 1px solid var(--color-neutral-40);
+  border: 0.0625rem solid var(--color-neutral-40);
   border-radius: 50%;
   transition: all 0.3s ease;
 }
