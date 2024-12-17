@@ -15,7 +15,7 @@ type StatusProps = {
 
 function StatusView({ activeTodos }: { activeTodos: Todos }) {
   if (activeTodos.length === 0) {
-    return <span className={styles.items}>All clear</span>;
+    return <span className={styles.items}>Items completed</span>;
   }
 
   if (activeTodos.length === 1) {
