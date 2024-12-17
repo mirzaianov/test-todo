@@ -1,7 +1,14 @@
+:root {
+  --app-width: 36.5rem;
+  --page-height: 0.325rem;
+  --page-width: 0.2rem;
+  --app-padding-x: 1rem;
+}
+
 .app {
-  max-width: 36.5rem;
+  max-width: var(--app-width);
   margin: 5rem auto;
-  padding: 0 1rem;
+  padding: 0 var(--app-padding-x);
 }
 
 .title {
@@ -15,5 +22,30 @@
 
 .content {
   background: var(--color-neutral-00);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2),
+    4px 0px 16px 0px rgba(0, 0, 0, 0.1);
+}
+
+.pageFirst,
+.pageSecond {
+  position: relative;
+  width: calc(
+    var(--app-width) - 2 * var(--app-padding-x) - 2 * var(--page-width)
+  );
+  height: var(--page-height);
+  margin: 0 auto;
+  background: var(--color-neutral-00);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.pageFirst {
+  z-index: -10;
+}
+
+.pageSecond {
+  width: calc(
+    var(--app-width) - 2 * var(--app-padding-x) - 4 * var(--page-width)
+  );
+  z-index: -20;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 4px 0px 16px 0 rgba(0, 0, 0, 0.1);
 }
