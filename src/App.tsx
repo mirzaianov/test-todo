@@ -4,11 +4,12 @@ import { type Filter, type Todos } from './types/types';
 import Input from './components/Input';
 import List from './components/List';
 import Status from './components/Status';
+import { DATA } from '../data.ts';
 
 import styles from './App.module.css';
 
 function App() {
-  const [todos, setTodos] = useState<Todos>([]);
+  const [todos, setTodos] = useState<Todos>(DATA);
   const [inputValue, setInputValue] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const [filter, setFilter] = useState<Filter>('all');
