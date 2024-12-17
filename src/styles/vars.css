@@ -7,6 +7,9 @@
   --color-primary-15: #ecd7d7;
   --color-primary-25: #77c0af;
 
+  --color-secondary-75: rgba(0, 0, 0, 0.1);
+  --color-secondary-85: rgba(0, 0, 0, 0.2);
+
   --color-text-40: #d9d9d9;
   --color-text-50: #777777;
   --color-text-60: #4d4d4d;

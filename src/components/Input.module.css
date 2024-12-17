@@ -5,6 +5,7 @@
   height: var(--input-height);
   padding: 0 1rem;
   gap: 1.8rem;
+  box-shadow: inset 0px -1px 2px 0px var(--color-secondary-75);
 }
 
 .btn {
@@ -53,7 +54,6 @@
 
   &::placeholder {
     font-family: 'Helvetica Neue UltraLight Italic', system-ui;
-    /* transform: translateX(-0.2rem); */
     letter-spacing: 0.04rem;
     color: var(--color-text-40);
   }
