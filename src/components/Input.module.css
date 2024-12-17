@@ -52,8 +52,9 @@
   white-space: nowrap;
 
   &::placeholder {
-    transform: translateX(-0.2rem);
-    font-style: italic;
+    font-family: 'Helvetica Neue UltraLight Italic', system-ui;
+    /* transform: translateX(-0.2rem); */
+    letter-spacing: 0.04rem;
     color: var(--color-text-40);
   }
 }

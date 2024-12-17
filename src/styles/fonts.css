@@ -1,11 +1,34 @@
 @font-face {
   font-display: swap;
+  font-family: 'Helvetica Neue Thin';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Helvetica Neue Thin'), local('Helvetica-Neue-Thin'),
+    local('HelveticaNeue Thin'), local('HelveticaNeue-Thin');
+  src: url('../assets/fonts/HelveticaNeue-Thin.otf') format('opentype');
+}
+
+@font-face {
+  font-display: swap;
   font-family: 'Helvetica Neue UltraLight';
   font-style: normal;
   font-weight: 200;
   src: local('Helvetica Neue UltraLight'), local('Helvetica-Neue-UltraLight'),
     local('HelveticaNeue UltraLight'), local('HelveticaNeue-UltraLight');
   src: url('../assets/fonts/HelveticaNeue-UltraLight.otf') format('opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Helvetica Neue UltraLight Italic';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Helvetica Neue UltraLight Italic'),
+    local('Helvetica-Neue-UltraLight-Italic'),
+    local('HelveticaNeue UltraLight Italic'),
+    local('HelveticaNeue-UltraLight-Italic');
+  src: url('../assets/fonts/HelveticaNeue-UltraLight-Italic.otf')
+    format('opentype');
 }
 
 @font-face {

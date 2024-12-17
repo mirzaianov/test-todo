@@ -13,8 +13,8 @@
 
 .title {
   font-family: 'Helvetica Neue UltraLight', system-ui;
-  font-size: 6.25rem;
   font-weight: 100;
+  font-size: 6.25rem;
   text-align: center;
   color: var(--color-text-15);
   margin-bottom: 0.3rem;
