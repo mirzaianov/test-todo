@@ -77,8 +77,12 @@ function App() {
       </div>
       {todos.length > 0 && (
         <>
-          <div className={styles.pageFirst}></div>
-          <div className={styles.pageSecond}></div>
+          <div className={styles.firstPageWrapper}>
+            <div className={styles.pageFirst}></div>
+          </div>
+          <div className={styles.secondPageWrapper}>
+            <div className={styles.pageSecond}></div>
+          </div>
         </>
       )}
     </div>

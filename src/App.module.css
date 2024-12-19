@@ -1,12 +1,13 @@
 :root {
   --app-width: 36.5rem;
-  --page-height: 0.325rem;
-  --page-width: 0.2rem;
   --app-padding-x: 1rem;
+  --page-height: 0.325rem;
+  --page-padding-x: 0.2rem;
 }
 
 .app {
   max-width: var(--app-width);
+  min-width: 18rem;
   margin: 5rem auto;
   padding: 0 var(--app-padding-x);
 }
@@ -26,12 +27,17 @@
     0.25rem 0rem 1rem 0rem var(--color-secondary-75);
 }
 
+.firstPageWrapper {
+  padding: 0 var(--page-padding-x);
+}
+
+.secondPageWrapper {
+  padding: 0 calc(2 * var(--page-padding-x));
+}
+
 .pageFirst,
 .pageSecond {
   position: relative;
-  width: calc(
-    var(--app-width) - 2 * var(--app-padding-x) - 2 * var(--page-width)
-  );
   height: var(--page-height);
   margin: 0 auto;
   background: var(--color-neutral-00);
@@ -43,9 +49,6 @@
 }
 
 .pageSecond {
-  width: calc(
-    var(--app-width) - 2 * var(--app-padding-x) - 4 * var(--page-width)
-  );
   z-index: -20;
   box-shadow: 0 0.0625rem 0.0625rem 0 var(--color-secondary-85),
     0.25rem 0rem 1rem 0 var(--color-secondary-75);

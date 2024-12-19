@@ -37,31 +37,36 @@ export default function Status({
     <div className={styles.status}>
       <StatusView activeTodos={activeTodos} />
       <div className={styles.filters}>
-        <Button
-          filter={filter}
-          setFilter={setFilter}
-          filterType="all"
-          text="All"
-        />
-        <Button
-          filter={filter}
-          setFilter={setFilter}
-          filterType="active"
-          text="Active"
-        />
-        <Button
-          filter={filter}
-          setFilter={setFilter}
-          filterType="completed"
-          text="Completed"
-        />
+        <div className={styles.empty}></div>
+        <div className={styles.buttons}>
+          <Button
+            filter={filter}
+            setFilter={setFilter}
+            filterType="all"
+            text="All"
+          />
+          <Button
+            filter={filter}
+            setFilter={setFilter}
+            filterType="active"
+            text="Active"
+          />
+          <Button
+            filter={filter}
+            setFilter={setFilter}
+            filterType="completed"
+            text="Completed"
+          />
+        </div>
       </div>
-      <button
-        className={clsx('btn', styles.btnClear)}
-        onClick={clearCompleted}
-      >
-        Clear completed
-      </button>
+      <div className={styles.clear}>
+        <button
+          className={clsx('btn', styles.btnClear)}
+          onClick={clearCompleted}
+        >
+          Clear completed
+        </button>
+      </div>
     </div>
   );
 }
