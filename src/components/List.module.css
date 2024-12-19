@@ -24,6 +24,7 @@
   padding: 0 1rem 0 0.5rem;
   position: relative;
   font-size: 1.5rem;
+  letter-spacing: 0.1px;
   border-bottom: 0.0625rem solid var(--color-neutral-40);
 }
 
