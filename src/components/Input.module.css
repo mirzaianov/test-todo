@@ -49,14 +49,17 @@
   border: none;
   width: 100%;
   color: var(--color-text-60);
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 
   &::placeholder {
     font-family: 'Helvetica Neue UltraLight Italic', system-ui;
     letter-spacing: 0.04rem;
     color: var(--color-text-40);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
