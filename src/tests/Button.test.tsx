@@ -1,9 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Button from './Button';
+import Button from '../components/Button';
 import { Filter } from '../types/types';
-import styles from './Button.module.css';
+import styles from '../components/Button.module.css';
 
 type ButtonProps = {
   filter: Filter;
