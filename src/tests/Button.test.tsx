@@ -12,7 +12,7 @@ type ButtonProps = {
   text: string;
 };
 
-describe('Button Component', () => {
+describe('Button', () => {
   const spySetFilter = vi.fn();
 
   const defaultProps: ButtonProps = {
@@ -29,7 +29,7 @@ describe('Button Component', () => {
   });
 
   // Click event test
-  it('should execute the setFilter handler when clicked with the correct filterType', async () => {
+  it('should call `setFilter` with the correct `filterType`', async () => {
     const user = userEvent.setup();
 
     render(
@@ -44,7 +44,7 @@ describe('Button Component', () => {
   });
 
   // btnActive style test - Active
-  it('should have btnActive style when filter matches filterType', () => {
+  it('should have `btnActive` style when the `filter` matches the `filterType`', () => {
     render(<Button {...defaultProps} />);
 
     const button = screen.getByRole('button');
@@ -53,7 +53,7 @@ describe('Button Component', () => {
   });
 
   // btnActive style test - Inactive
-  it('should not have active style when filter and filterType differ', () => {
+  it('should not have `btnActive` style when the `filter` and the `filterType` differ', () => {
     render(
       <Button
         {...defaultProps}
