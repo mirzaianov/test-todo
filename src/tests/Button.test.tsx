@@ -1,8 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { type Filter } from '../types/types';
 import userEvent from '@testing-library/user-event';
 import Button from '../components/Button';
-import { Filter } from '../types/types';
 import styles from '../components/Button.module.css';
 
 type ButtonProps = {
@@ -12,7 +12,7 @@ type ButtonProps = {
   text: string;
 };
 
-describe('Button', () => {
+describe('Button Component', () => {
   const spySetFilter = vi.fn();
 
   const defaultProps: ButtonProps = {
