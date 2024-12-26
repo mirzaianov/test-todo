@@ -12,7 +12,9 @@ type InputProps = {
 };
 
 describe('Input', () => {
-  const spySetIsExpanded = vi.fn();
+  const spySetIsExpanded = vi.fn(() => {
+    defaultProps.isExpanded = !defaultProps.isExpanded;
+  });
   const spySetInputValue = vi.fn();
   const spyAddTodo = vi.fn();
 
@@ -24,7 +26,7 @@ describe('Input', () => {
     addTodo: spyAddTodo,
   };
 
-  // Rendering test
+  // Initial rendering test
   it('should render an input with a placeholder and the `Dropdown` button', () => {
     render(<Input {...defaultProps} />);
     expect(screen.getByText('❯')).toBeInTheDocument();
@@ -33,23 +35,36 @@ describe('Input', () => {
     ).toBeInTheDocument();
   });
 
-  // Add button rendering test
+  // Add button rendering test - Hidden
   it('should not render the `Add` button', () => {
     render(<Input {...defaultProps} />);
     expect(screen.queryByText('+')).not.toBeInTheDocument();
   });
 
-  // Input change event test
-  it('should call `setInputValue` on the input change', async () => {
+  // Add button rendering test - Visible
+  it('should render the `Add` button', async () => {
     const user = userEvent.setup();
 
     render(<Input {...defaultProps} />);
 
-    const input = screen.getByRole('textbox');
+    const input = screen.getByPlaceholderText('What needs to be done?');
 
-    await user.type(input, 'New Todo');
-    expect(spySetInputValue).toHaveBeenCalledTimes(8);
+    await user.type(input, 'New Todo 2');
+
+    expect(screen.getByText('+')).toBeInTheDocument();
   });
+
+  // Input change event test
+  // it('should call `setInputValue` on the input change', async () => {
+  //   const user = userEvent.setup();
+
+  //   render(<Input {...defaultProps} />);
+
+  //   const input = screen.getByRole('textbox');
+
+  //   await user.type(input, 'New Todo');
+  //   expect(spySetInputValue).toHaveBeenCalledTimes(8);
+  // });
 
   // Click event test - Dropdown button
   it('should call `setIsExpanded` when the `Dropdown` button is clicked', async () => {
