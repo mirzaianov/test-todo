@@ -10,6 +10,7 @@ import styles from './App.module.css';
 
 function App() {
   const [todos, setTodos] = useState<Todos>(DATA);
+  // TODO: Move state lower
   const [inputValue, setInputValue] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const [filter, setFilter] = useState<Filter>('all');
