@@ -1,31 +1,29 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
 import Input from '../components/Input';
 
+import { type Todos } from '../types/types';
+
 type InputProps = {
+  todos: Todos;
+  setTodos: (value: Todos) => void;
   isExpanded: boolean;
-  setIsExpanded: (isExpanded: boolean) => void;
-  inputValue: string;
-  setInputValue: (inputValue: string) => void;
-  addTodo: (text: string) => void;
+  setIsExpanded: (value: boolean) => void;
 };
 
 describe('Input', () => {
   const spySetIsExpanded = vi.fn(() => {
     defaultProps.isExpanded = !defaultProps.isExpanded;
   });
-  const spySetInputValue = vi.fn((value) => {
-    defaultProps.inputValue = value;
-  });
-  const spyAddTodo = vi.fn();
+  const spySetTodos = vi.fn();
 
   const defaultProps: InputProps = {
+    todos: [],
+    setTodos: spySetTodos,
     isExpanded: true,
     setIsExpanded: spySetIsExpanded,
-    inputValue: '',
-    setInputValue: spySetInputValue,
-    addTodo: spyAddTodo,
   };
 
   // Initial rendering test
@@ -53,21 +51,19 @@ describe('Input', () => {
 
     await user.type(input, 'Buy milk');
     expect(input).toHaveValue('Buy milk');
-    expect(spySetInputValue).toHaveBeenCalledWith('Buy milk');
   });
 
   // Add button rendering test - Visible
-  // it('should render the `Add` button', async () => {
-  //   const user = userEvent.setup();
+  it('should render the `Add` button', async () => {
+    const user = userEvent.setup();
 
-  //   render(<Input {...defaultProps} />);
+    render(<Input {...defaultProps} />);
 
-  //   const input = screen.getByPlaceholderText('What needs to be done?');
+    const input = screen.getByPlaceholderText('What needs to be done?');
 
-  //   await user.type(input, 'New Todo 2');
-
-  //   expect(screen.getByText('+')).toBeInTheDocument();
-  // });
+    await user.type(input, 'Buy bread');
+    expect(screen.getByText('+')).toBeInTheDocument();
+  });
 
   // Click event test - Dropdown button
   it('should call `setIsExpanded` when the `Dropdown` button is clicked', async () => {
@@ -79,30 +75,37 @@ describe('Input', () => {
   });
 
   // Enter key press event test
-  it('should call `addTodo` on the `Enter key` press', async () => {
+  it('should call `setTodos` when the `Enter` key is pressed', async () => {
     const user = userEvent.setup();
 
-    render(
-      <Input
-        {...defaultProps}
-        inputValue="New Todo"
-      />,
-    );
+    render(<Input {...defaultProps} />);
+
+    const input = screen.getByPlaceholderText('What needs to be done?');
+    await user.type(input, 'Buy eggs');
     await user.keyboard('{Enter}');
-    expect(spyAddTodo).toHaveBeenCalledWith('New Todo');
+    expect(spySetTodos).toHaveBeenCalledWith([
+      { id: 1, text: 'Buy eggs', completed: false },
+    ]);
+    expect(input).toHaveValue('');
   });
 
   // Click event test - Add button
-  it('should call `addTodo` when the `Add` button is clicked', async () => {
+  it('should call `setTodos` when the `Add` key is pressed', async () => {
     const user = userEvent.setup();
 
-    render(
-      <Input
-        {...defaultProps}
-        inputValue="New Todo"
-      />,
-    );
-    await user.click(screen.getByText('+'));
-    expect(spyAddTodo).toHaveBeenCalledWith('New Todo');
+    render(<Input {...defaultProps} />);
+
+    const input = screen.getByPlaceholderText('What needs to be done?');
+
+    await user.type(input, 'Do homework');
+
+    const button = screen.getByText('+');
+
+    expect(screen.getByText('+')).toBeInTheDocument();
+    await user.click(button);
+    expect(spySetTodos).toHaveBeenCalledWith([
+      { id: 1, text: 'Do homework', completed: false },
+    ]);
+    expect(input).toHaveValue('');
   });
 });
