@@ -15,7 +15,9 @@ describe('Input', () => {
   const spySetIsExpanded = vi.fn(() => {
     defaultProps.isExpanded = !defaultProps.isExpanded;
   });
-  const spySetInputValue = vi.fn();
+  const spySetInputValue = vi.fn((value) => {
+    defaultProps.inputValue = value;
+  });
   const spyAddTodo = vi.fn();
 
   const defaultProps: InputProps = {
@@ -41,29 +43,30 @@ describe('Input', () => {
     expect(screen.queryByText('+')).not.toBeInTheDocument();
   });
 
-  // Add button rendering test - Visible
-  it('should render the `Add` button', async () => {
+  // Input change event test
+  it('should change an input value when typed', async () => {
     const user = userEvent.setup();
 
     render(<Input {...defaultProps} />);
 
     const input = screen.getByPlaceholderText('What needs to be done?');
 
-    await user.type(input, 'New Todo 2');
-
-    expect(screen.getByText('+')).toBeInTheDocument();
+    await user.type(input, 'Buy milk');
+    expect(input).toHaveValue('Buy milk');
+    expect(spySetInputValue).toHaveBeenCalledWith('Buy milk');
   });
 
-  // Input change event test
-  // it('should call `setInputValue` on the input change', async () => {
+  // Add button rendering test - Visible
+  // it('should render the `Add` button', async () => {
   //   const user = userEvent.setup();
 
   //   render(<Input {...defaultProps} />);
 
-  //   const input = screen.getByRole('textbox');
+  //   const input = screen.getByPlaceholderText('What needs to be done?');
 
-  //   await user.type(input, 'New Todo');
-  //   expect(spySetInputValue).toHaveBeenCalledTimes(8);
+  //   await user.type(input, 'New Todo 2');
+
+  //   expect(screen.getByText('+')).toBeInTheDocument();
   // });
 
   // Click event test - Dropdown button

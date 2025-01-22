@@ -1,22 +1,51 @@
 import clsx from 'clsx';
 
+import { useState } from 'react';
+
+import { Todos } from '../types/types';
+
 import styles from './Input.module.css';
 
 type InputProps = {
+  todos: Todos;
+  setTodos: (value: Todos) => void;
   isExpanded: boolean;
   setIsExpanded: (value: boolean) => void;
-  inputValue: string;
-  setInputValue: (value: string) => void;
-  addTodo: (value: string) => void;
 };
 
 export default function Input({
+  todos,
+  setTodos,
   isExpanded,
   setIsExpanded,
-  inputValue,
-  setInputValue,
-  addTodo,
 }: InputProps) {
+  const [inputValue, setInputValue] = useState<string>('');
+
+  const handleClick = (text: string) => {
+    if (text.trim()) {
+      setTodos([
+        ...todos,
+        {
+          id: todos.length ? Math.max(...todos.map((t) => t.id)) + 1 : 1,
+          text,
+          completed: false,
+        },
+      ]);
+    }
+
+    setInputValue('');
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleClick(inputValue);
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
       <button
@@ -33,15 +62,15 @@ export default function Input({
         className={styles.input}
         type="text"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onKeyDown={(e) => e.key === 'Enter' && addTodo(inputValue)}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
         placeholder="What needs to be done?"
         autoFocus
       />
       {inputValue && (
         <button
           className={clsx(styles.btn, styles.addBtn)}
-          onClick={() => addTodo(inputValue)}
+          onClick={() => handleClick(inputValue)}
         >
           <span>+</span>
         </button>
