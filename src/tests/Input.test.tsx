@@ -4,14 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import Input from '../components/Input';
 
-import { type Todos } from '../types/types';
-
-type InputProps = {
-  todos: Todos;
-  setTodos: (value: Todos) => void;
-  isExpanded: boolean;
-  setIsExpanded: (value: boolean) => void;
-};
+import { type InputProps } from '../types/types';
 
 describe('Input', () => {
   const spySetIsExpanded = vi.fn(() => {

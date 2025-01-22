@@ -2,16 +2,9 @@ import clsx from 'clsx';
 
 import { useState } from 'react';
 
-import { Todos } from '../types/types';
+import { type InputProps } from '../types/types';
 
 import styles from './Input.module.css';
-
-type InputProps = {
-  todos: Todos;
-  setTodos: (value: Todos) => void;
-  isExpanded: boolean;
-  setIsExpanded: (value: boolean) => void;
-};
 
 export default function Input({
   todos,

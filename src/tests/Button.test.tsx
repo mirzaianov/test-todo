@@ -4,16 +4,9 @@ import userEvent from '@testing-library/user-event';
 
 import Button from '../components/Button';
 
-import { type Filter } from '../types/types';
+import { type ButtonProps } from '../types/types';
 
 import styles from '../components/Button.module.css';
-
-type ButtonProps = {
-  filter: Filter;
-  setFilter: (filter: Filter) => void;
-  filterType: Filter;
-  text: string;
-};
 
 describe('Button', () => {
   const spySetFilter = vi.fn();

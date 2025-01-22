@@ -1,14 +1,8 @@
 import clsx from 'clsx';
 
-import { type Todo, type Todos } from '../types/types';
+import { type Todo, type ListProps } from '../types/types';
 
 import styles from './List.module.css';
-
-type ListProps = {
-  isExpanded: boolean;
-  filteredTodos: Todos;
-  toggleTodo: (id: number) => void;
-};
 
 export default function List({
   isExpanded,
