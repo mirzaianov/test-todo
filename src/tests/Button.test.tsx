@@ -1,8 +1,11 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { type Filter } from '../types/types';
 import userEvent from '@testing-library/user-event';
+
 import Button from '../components/Button';
+
+import { type Filter } from '../types/types';
+
 import styles from '../components/Button.module.css';
 
 type ButtonProps = {
@@ -44,8 +47,14 @@ describe('Button', () => {
   });
 
   // btnActive style test - Active
-  it('should have `btnActive` style when the `filter` matches the `filterType`', () => {
-    render(<Button {...defaultProps} />);
+  it('should have `btnActive` style when `filter` matches `filterType`', () => {
+    render(
+      <Button
+        {...defaultProps}
+        filter="completed"
+        filterType="completed"
+      />,
+    );
 
     const button = screen.getByRole('button');
 
@@ -53,7 +62,7 @@ describe('Button', () => {
   });
 
   // btnActive style test - Inactive
-  it('should not have `btnActive` style when the `filter` and the `filterType` differ', () => {
+  it('should not have `btnActive` style when `filter` and `filterType` differ', () => {
     render(
       <Button
         {...defaultProps}
