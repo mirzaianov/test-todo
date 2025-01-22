@@ -101,4 +101,66 @@ describe('Input', () => {
     ]);
     expect(input).toHaveValue('');
   });
+
+  // Enter key press event test - Empty input
+  it('should not add todo when input is empty', async () => {
+    const user = userEvent.setup();
+    const spySetTodos = vi.fn();
+
+    render(
+      <Input
+        {...defaultProps}
+        setTodos={spySetTodos}
+      />,
+    );
+
+    const input = screen.getByPlaceholderText('What needs to be done?');
+    await user.type(input, '{Enter}');
+
+    expect(spySetTodos).not.toHaveBeenCalled();
+  });
+
+  // Enter key press event test - Input contains only whitespace
+  it('should not add todo when input contains only whitespace', async () => {
+    const user = userEvent.setup();
+    const spySetTodos = vi.fn();
+
+    render(
+      <Input
+        {...defaultProps}
+        setTodos={spySetTodos}
+      />,
+    );
+
+    const input = screen.getByPlaceholderText('What needs to be done?');
+    await user.type(input, '   ');
+    await user.keyboard('{Enter}');
+
+    expect(spySetTodos).not.toHaveBeenCalled();
+  });
+
+  // ID generation test
+  it('should generate correct ID for non-empty todos array', async () => {
+    const user = userEvent.setup();
+    const existingTodos = [
+      { id: 1, text: 'First', completed: false },
+      { id: 5, text: 'Second', completed: false }, // Non-sequential ID
+    ];
+
+    render(
+      <Input
+        {...defaultProps}
+        todos={existingTodos}
+      />,
+    );
+
+    const input = screen.getByPlaceholderText('What needs to be done?');
+    await user.type(input, 'New todo');
+    await user.keyboard('{Enter}');
+
+    expect(spySetTodos).toHaveBeenCalledWith([
+      ...existingTodos,
+      { id: 6, text: 'New todo', completed: false },
+    ]);
+  });
 });

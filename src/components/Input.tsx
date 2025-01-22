@@ -34,7 +34,7 @@ export default function Input({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && inputValue) {
       handleClick(inputValue);
     }
   };
