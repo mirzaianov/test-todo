@@ -1,6 +1,6 @@
-![MasterHead](./head.png)
-
 # "Todo App" Test Project
+
+![MasterHead](./head.gif)
 
 ## Description
 
@@ -8,39 +8,40 @@
 
 ### Features
 
-- An input field of the new task
-- List of all tasks
+- Pixel-perfect layout
+- An input field for a new task
+- List of all tasks with option to hide it
 - Separate filters to show lists of `Completed` and `Active` tasks
-- Implemented Unit Tests
+- 100% Unit Tests coverage
 - Utilized React Hooks
 
 ### Dependencies
 
 1. `Vite`
 2. `React` • `TypeScript`
-3. `Jest`
+3. `Vitest` • `React Testing Library`
 
 ## Installation & Execution
 
-### Install via Vite:
+### Install via Vite
 
-```
+```bash
   git clone https://github.com/mirzaianov/test-todo.git
   cd test-todo
   npm i
 ```
 
-### Run in the development mode:
+### Run in the development mode
 
-```
+```bash
   npm run start
 ```
 
-Vite will start frontend server on http://localhost:5173/
+Vite will start frontend server on [http://localhost:5173/](http://localhost:5173/)
 
-### Or open the deployed site:
+### Or open the deployed site
 
-https://todo-mirzaianov.vercel.app/
+[https://todo-mirzaianov.vercel.app/](https://todo-mirzaianov.vercel.app/)
 
 ## License
 
