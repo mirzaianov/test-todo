@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { Filter } from '../types/types';
+import { type Filter } from '../types/types';
 
 import styles from './Button.module.css';
 
