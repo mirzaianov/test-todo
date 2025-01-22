@@ -11,9 +11,9 @@ export default function List({
 }: ListProps) {
   return (
     <div className={clsx(styles.wrapper, isExpanded && styles.wrapperExpanded)}>
-      <div className={clsx(styles.list)}>
+      <ul className={clsx(styles.list)}>
         {filteredTodos.map((todo: Todo) => (
-          <div
+          <li
             key={todo.id}
             className={styles.item}
           >
@@ -34,9 +34,9 @@ export default function List({
             >
               {todo.text}
             </span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
