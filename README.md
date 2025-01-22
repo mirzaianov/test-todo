@@ -43,6 +43,20 @@ Vite will start frontend server on [http://localhost:5173/](http://localhost:517
 
 [https://todo-mirzaianov.vercel.app/](https://todo-mirzaianov.vercel.app/)
 
+## Run Tests
+
+### The test
+
+```bash
+  npm run test
+```
+
+### The tests coverage
+
+```bash
+  npm run coverage
+```
+
 ## License
 
 ### MIT license
