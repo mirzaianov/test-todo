@@ -5,7 +5,7 @@
   font-weight: 200;
   src: local('Helvetica Neue UltraLight'), local('Helvetica-Neue-UltraLight'),
     local('HelveticaNeue UltraLight'), local('HelveticaNeue-UltraLight');
-  src: url('../assets/fonts/HelveticaNeue-UltraLight.otf') format('opentype');
+  src: url('../assets/fonts/HelveticaNeueUltraLight.otf') format('opentype');
 }
 
 @font-face {
@@ -17,7 +17,7 @@
     local('Helvetica-Neue-UltraLight-Italic'),
     local('HelveticaNeue UltraLight Italic'),
     local('HelveticaNeue-UltraLight-Italic');
-  src: url('../assets/fonts/HelveticaNeue-UltraLightItalic.otf')
+  src: url('../assets/fonts/HelveticaNeueUltraLightItalic.otf')
     format('opentype');
 }
 
@@ -28,5 +28,5 @@
   font-weight: 300;
   src: local('Helvetica Neue Light'), local('Helvetica-Neue-Light'),
     local('HelveticaNeue Light'), local('HelveticaNeue-Light');
-  src: url('../assets/fonts/HelveticaNeue-Light.otf') format('opentype');
+  src: url('../assets/fonts/HelveticaNeueLight.otf') format('opentype');
 }
