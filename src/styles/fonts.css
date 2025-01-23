@@ -1,13 +1,5 @@
 @font-face {
   font-display: swap;
-  font-family: 'Helvetica Neue Thin';
-  src: local('Helvetica Neue Thin'), local('Helvetica-Neue-Thin'),
-    local('HelveticaNeue Thin'), local('HelveticaNeue-Thin');
-  src: url('../assets/fonts/HelveticaNeue-Thin.otf') format('opentype');
-}
-
-@font-face {
-  font-display: swap;
   font-family: 'Helvetica Neue UltraLight';
   src: local('Helvetica Neue UltraLight'), local('Helvetica-Neue-UltraLight'),
     local('HelveticaNeue UltraLight'), local('HelveticaNeue-UltraLight');
