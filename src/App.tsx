@@ -10,25 +10,8 @@ import styles from './App.module.css';
 
 function App() {
   const [todos, setTodos] = useState<Todos>(DATA);
-  // TODO: Move state lower
-  const [inputValue, setInputValue] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const [filter, setFilter] = useState<Filter>('all');
-
-  const addTodo = (text: string) => {
-    if (text.trim()) {
-      setTodos([
-        ...todos,
-        {
-          id: todos.length ? Math.max(...todos.map((t) => t.id)) + 1 : 1,
-          text,
-          completed: false,
-        },
-      ]);
-
-      setInputValue('');
-    }
-  };
 
   const toggleTodo = (id: number) => {
     setTodos(
@@ -56,11 +39,10 @@ function App() {
       <h1 className={styles.title}>todos</h1>
       <div className={styles.content}>
         <Input
+          todos={todos}
+          setTodos={setTodos}
           isExpanded={isExpanded}
           setIsExpanded={setIsExpanded}
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-          addTodo={addTodo}
         />
         <List
           isExpanded={isExpanded}

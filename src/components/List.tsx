@@ -1,14 +1,8 @@
 import clsx from 'clsx';
 
-import { type Todo, type Todos } from '../types/types';
+import { type Todo, type ListProps } from '../types/types';
 
 import styles from './List.module.css';
-
-type ListProps = {
-  isExpanded: boolean;
-  filteredTodos: Todos;
-  toggleTodo: (id: number) => void;
-};
 
 export default function List({
   isExpanded,
@@ -16,10 +10,16 @@ export default function List({
   toggleTodo,
 }: ListProps) {
   return (
-    <div className={clsx(styles.wrapper, isExpanded && styles.wrapperExpanded)}>
-      <div className={clsx(styles.list)}>
+    <div
+      className={clsx(
+        styles.listWrapper,
+        isExpanded && styles.listWrapperExpanded,
+      )}
+      data-testid="list-wrapper"
+    >
+      <ul className={clsx(styles.list)}>
         {filteredTodos.map((todo: Todo) => (
-          <div
+          <li
             key={todo.id}
             className={styles.item}
           >
@@ -40,9 +40,9 @@ export default function List({
             >
               {todo.text}
             </span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

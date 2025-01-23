@@ -1,17 +1,10 @@
 import clsx from 'clsx';
 
-import { type Todos, type Filter } from '../types/types';
+import { type Todos, type StatusProps } from '../types/types';
 
 import Button from './Button';
 
 import styles from './Status.module.css';
-
-type StatusProps = {
-  activeTodos: Todos;
-  filter: Filter;
-  setFilter: (filter: Filter) => void;
-  clearCompleted: () => void;
-};
 
 function StatusView({ activeTodos }: { activeTodos: Todos }) {
   if (activeTodos.length === 0) {
