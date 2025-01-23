@@ -55,6 +55,7 @@
 
   &::placeholder {
     font-family: 'Helvetica Neue UltraLight Italic', system-ui;
+    font-weight: 200;
     letter-spacing: 0.04rem;
     color: var(--color-text-40);
     overflow: hidden;
