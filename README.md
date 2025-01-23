@@ -45,6 +45,8 @@ Vite will start frontend server on [http://localhost:5173/](http://localhost:517
 
 ## Run Tests
 
+![Unit Tests Coverage](./coverage.png)
+
 ### The test
 
 ```bash
