@@ -1,15 +1,16 @@
 .inputWrapper {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   height: var(--input-height);
   padding: 0 1rem;
-  gap: 1.9rem;
+  gap: 1.75rem;
   box-shadow: inset 0rem -0.0625rem 0.125rem 0rem var(--color-secondary-75);
 }
 
 .btn {
+  flex-shrink: 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -55,9 +56,9 @@
   white-space: nowrap;
 
   &::placeholder {
-    font-family: 'Helvetica Neue Light', system-ui;
+    font-family: 'Helvetica Neue UltraLight', system-ui;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 200;
     letter-spacing: 0.04rem;
     color: var(--color-text-40);
     overflow: hidden;
