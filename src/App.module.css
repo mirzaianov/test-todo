@@ -13,8 +13,7 @@
 }
 
 .title {
-  font-family: 'Helvetica Neue UltraLight', 'Helvetica Neue UltraLight Italic',
-    system-ui;
+  font-family: 'Helvetica Neue UltraLight', system-ui;
   font-weight: 100;
   font-size: 6.25rem;
   text-align: center;

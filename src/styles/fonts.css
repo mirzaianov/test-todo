@@ -10,19 +10,6 @@
 
 @font-face {
   font-display: swap;
-  font-family: 'Helvetica Neue UltraLight Italic';
-  font-style: italic;
-  font-weight: 200;
-  src: local('Helvetica Neue UltraLight Italic'),
-    local('Helvetica-Neue-UltraLight-Italic'),
-    local('HelveticaNeue UltraLight Italic'),
-    local('HelveticaNeue-UltraLight-Italic');
-  src: url('../assets/fonts/HelveticaNeueUltraLightItalic.otf')
-    format('opentype');
-}
-
-@font-face {
-  font-display: swap;
   font-family: 'Helvetica Neue Light';
   font-style: normal;
   font-weight: 300;
