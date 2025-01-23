@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { DATA } from './data.ts';
+import { DATA } from '../../data';
 
 describe('DATA', () => {
   it('should export correct data structure', () => {
