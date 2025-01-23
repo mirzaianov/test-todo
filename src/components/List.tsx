@@ -15,6 +15,7 @@ export default function List({
         styles.listWrapper,
         isExpanded && styles.listWrapperExpanded,
       )}
+      data-testid="list-wrapper"
     >
       <ul className={clsx(styles.list)}>
         {filteredTodos.map((todo: Todo) => (
