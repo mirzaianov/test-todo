@@ -8,17 +8,17 @@
 
 ### Features
 
-- Pixel-perfect layout
+- The pixel-perfect layout
 - An input field for a new task
-- List of all tasks with option to hide it
-- Separate filters to show lists of `Completed` and `Active` tasks
+- A list of all tasks with option to hide it
+- Separate filters to show lists of `All`, `Completed` & `Active` tasks
 - 100% Unit Tests coverage
 - Utilized React Hooks
 
 ### Dependencies
 
 1. `Vite`
-2. `React` • `TypeScript`
+2. `TypeScript` • `React` • `React Hooks`
 3. `Vitest` • `React Testing Library`
 
 ## Installation & Execution
