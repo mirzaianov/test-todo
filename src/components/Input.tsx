@@ -40,7 +40,7 @@ export default function Input({
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.inputWrapper}>
       <button
         className={clsx(
           styles.btn,

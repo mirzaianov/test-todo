@@ -10,7 +10,12 @@ export default function List({
   toggleTodo,
 }: ListProps) {
   return (
-    <div className={clsx(styles.wrapper, isExpanded && styles.wrapperExpanded)}>
+    <div
+      className={clsx(
+        styles.listWrapper,
+        isExpanded && styles.listWrapperExpanded,
+      )}
+    >
       <ul className={clsx(styles.list)}>
         {filteredTodos.map((todo: Todo) => (
           <li

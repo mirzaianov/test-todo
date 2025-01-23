@@ -96,15 +96,15 @@ describe('List', () => {
   });
 
   // Expanded class test - Expanded
-  it('should have the `wrapperExpanded` class when `isExpanded` is true', () => {
+  it('should have the `listWrapperExpanded` class when `isExpanded` is true', () => {
     const { container } = render(<List {...defaultProps} />);
     const firstElement = container.firstElementChild;
 
-    expect(firstElement).toHaveClass(styles.wrapperExpanded);
+    expect(firstElement).toHaveClass(styles.listWrapperExpanded);
   });
 
   // Expanded class test - Collapsed
-  it('should not have the `wrapperExpanded` class when `isExpanded` is false', () => {
+  it('should not have the `listWrapperExpanded` class when `isExpanded` is false', () => {
     const { container } = render(
       <List
         {...defaultProps}
@@ -113,6 +113,6 @@ describe('List', () => {
     );
     const firstElement = container.firstElementChild;
 
-    expect(firstElement).not.toHaveClass(styles.wrapperExpanded);
+    expect(firstElement).not.toHaveClass(styles.listWrapperExpanded);
   });
 });

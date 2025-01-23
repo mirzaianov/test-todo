@@ -1,14 +1,14 @@
-.wrapper {
+.listWrapper {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.3s ease-out;
 }
 
-.wrapper:has(*:not(:empty)) {
+.listWrapper:has(*:not(:empty)) {
   border-top: 0.0625rem solid var(--color-neutral-40);
 }
 
-.wrapperExpanded {
+.listWrapperExpanded {
   grid-template-rows: 1fr;
 }
 
