@@ -9,11 +9,9 @@ import { type ButtonProps } from '../types/types';
 import styles from '../components/Button.module.css';
 
 describe('Button', () => {
-  const spySetFilter = vi.fn();
-
   const defaultProps: ButtonProps = {
     filter: 'all',
-    setFilter: spySetFilter,
+    setFilter: vi.fn(),
     filterType: 'all',
     text: 'All',
   };
@@ -26,11 +24,13 @@ describe('Button', () => {
 
   // Click event test
   it('should call `setFilter` with the correct `filterType`', async () => {
+    const spySetFilter = vi.fn();
     const user = userEvent.setup();
 
     render(
       <Button
         {...defaultProps}
+        setFilter={spySetFilter}
         filterType="active"
       />,
     );

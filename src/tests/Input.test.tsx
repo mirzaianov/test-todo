@@ -7,16 +7,11 @@ import Input from '../components/Input';
 import { type InputProps } from '../types/types';
 
 describe('Input', () => {
-  const spySetIsExpanded = vi.fn(() => {
-    defaultProps.isExpanded = !defaultProps.isExpanded;
-  });
-  const spySetTodos = vi.fn();
-
   const defaultProps: InputProps = {
     todos: [],
-    setTodos: spySetTodos,
+    setTodos: vi.fn(),
     isExpanded: true,
-    setIsExpanded: spySetIsExpanded,
+    setIsExpanded: vi.fn(),
   };
 
   // Initial rendering test
@@ -61,8 +56,16 @@ describe('Input', () => {
   // Click event test - Dropdown button
   it('should call `setIsExpanded` when the `Dropdown` button is clicked', async () => {
     const user = userEvent.setup();
+    const spySetIsExpanded = vi.fn(() => {
+      defaultProps.isExpanded = !defaultProps.isExpanded;
+    });
 
-    render(<Input {...defaultProps} />);
+    render(
+      <Input
+        {...defaultProps}
+        setIsExpanded={spySetIsExpanded}
+      />,
+    );
     await user.click(screen.getByText('❯'));
     expect(spySetIsExpanded).toHaveBeenCalledWith(false);
   });
@@ -70,10 +73,17 @@ describe('Input', () => {
   // Enter key press event test
   it('should call `setTodos` when the `Enter` key is pressed', async () => {
     const user = userEvent.setup();
+    const spySetTodos = vi.fn();
 
-    render(<Input {...defaultProps} />);
+    render(
+      <Input
+        {...defaultProps}
+        setTodos={spySetTodos}
+      />,
+    );
 
     const input = screen.getByPlaceholderText('What needs to be done?');
+
     await user.type(input, 'Buy eggs');
     await user.keyboard('{Enter}');
     expect(spySetTodos).toHaveBeenCalledWith([
@@ -85,8 +95,14 @@ describe('Input', () => {
   // Click event test - Add button
   it('should call `setTodos` when the `Add` key is pressed', async () => {
     const user = userEvent.setup();
+    const spySetTodos = vi.fn();
 
-    render(<Input {...defaultProps} />);
+    render(
+      <Input
+        {...defaultProps}
+        setTodos={spySetTodos}
+      />,
+    );
 
     const input = screen.getByPlaceholderText('What needs to be done?');
 
@@ -142,6 +158,7 @@ describe('Input', () => {
   // ID generation test
   it('should generate correct ID for non-empty todos array', async () => {
     const user = userEvent.setup();
+    const spySetTodos = vi.fn();
     const existingTodos = [
       { id: 1, text: 'First', completed: false },
       { id: 5, text: 'Second', completed: false }, // Non-sequential ID
@@ -151,6 +168,7 @@ describe('Input', () => {
       <Input
         {...defaultProps}
         todos={existingTodos}
+        setTodos={spySetTodos}
       />,
     );
 

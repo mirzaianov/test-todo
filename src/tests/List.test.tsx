@@ -9,12 +9,10 @@ import { type ListProps } from '../types/types';
 import styles from '../components/List.module.css';
 
 describe('List', () => {
-  const spyToggleTodo = vi.fn();
-
   const defaultProps: ListProps = {
     isExpanded: true,
     filteredTodos: [],
-    toggleTodo: spyToggleTodo,
+    toggleTodo: vi.fn(),
   };
 
   // Initial rendering test
@@ -45,10 +43,12 @@ describe('List', () => {
   // Toggle event test
   it('should call `toggleTodo` when a todo is clicked', async () => {
     const user = userEvent.setup();
+    const spyToggleTodo = vi.fn();
 
     render(
       <List
         {...defaultProps}
+        toggleTodo={spyToggleTodo}
         filteredTodos={[
           { id: 1, text: 'Test Todo 1', completed: false },
           { id: 2, text: 'Test Todo 2', completed: true },

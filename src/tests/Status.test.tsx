@@ -7,14 +7,11 @@ import Status from '../components/Status';
 import { type StatusProps } from '../types/types';
 
 describe('Status', () => {
-  const spySetFilter = vi.fn();
-  const spyClearCompleted = vi.fn();
-
   const defaultProps: StatusProps = {
     activeTodos: [],
     filter: 'all',
-    setFilter: spySetFilter,
-    clearCompleted: spyClearCompleted,
+    setFilter: vi.fn(),
+    clearCompleted: vi.fn(),
   };
 
   //Rendering test - No active todos
@@ -51,8 +48,14 @@ describe('Status', () => {
   // Click event test - All button
   it('should call `setFilter` with `all` when `All` button is clicked', async () => {
     const user = userEvent.setup();
+    const spySetFilter = vi.fn();
 
-    render(<Status {...defaultProps} />);
+    render(
+      <Status
+        {...defaultProps}
+        setFilter={spySetFilter}
+      />,
+    );
     await user.click(screen.getByText('All'));
     expect(spySetFilter).toHaveBeenCalledWith('all');
   });
@@ -60,8 +63,14 @@ describe('Status', () => {
   // Click event test - Active button
   it('should call `setFilter` with `active` when `Active` button is clicked', async () => {
     const user = userEvent.setup();
+    const spySetFilter = vi.fn();
 
-    render(<Status {...defaultProps} />);
+    render(
+      <Status
+        {...defaultProps}
+        setFilter={spySetFilter}
+      />,
+    );
     await user.click(screen.getByText('Active'));
     expect(spySetFilter).toHaveBeenCalledWith('active');
   });
@@ -69,8 +78,14 @@ describe('Status', () => {
   // Click event test - Completed button
   it('should call `setFilter` with `completed` when `Completed` button is clicked', async () => {
     const user = userEvent.setup();
+    const spySetFilter = vi.fn();
 
-    render(<Status {...defaultProps} />);
+    render(
+      <Status
+        {...defaultProps}
+        setFilter={spySetFilter}
+      />,
+    );
     await user.click(screen.getByText('Completed'));
     expect(spySetFilter).toHaveBeenCalledWith('completed');
   });
@@ -78,8 +93,14 @@ describe('Status', () => {
   // Click event test - Clear completed button
   it('should call `clearCompleted` when `Clear completed` button is clicked', async () => {
     const user = userEvent.setup();
+    const spyClearCompleted = vi.fn();
 
-    render(<Status {...defaultProps} />);
+    render(
+      <Status
+        {...defaultProps}
+        clearCompleted={spyClearCompleted}
+      />,
+    );
     await user.click(screen.getByText('Clear completed'));
     expect(spyClearCompleted).toHaveBeenCalled();
   });
