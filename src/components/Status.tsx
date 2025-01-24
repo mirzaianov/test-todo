@@ -8,16 +8,14 @@ import styles from './Status.module.css';
 
 function StatusView({ activeTodos }: { activeTodos: Todos }) {
   if (activeTodos.length === 0) {
-    return <span className={styles.items}>Items completed</span>;
+    return <span>Items completed</span>;
   }
 
   if (activeTodos.length === 1) {
-    return <span className={styles.items}>1 item left</span>;
+    return <span>1 item left</span>;
   }
 
-  return (
-    <span className={styles.items}>{`${activeTodos.length} items left`}</span>
-  );
+  return <span>{`${activeTodos.length} items left`}</span>;
 }
 
 export default function Status({
@@ -28,7 +26,9 @@ export default function Status({
 }: StatusProps) {
   return (
     <div className={styles.status}>
-      <StatusView activeTodos={activeTodos} />
+      <div className={styles.items}>
+        <StatusView activeTodos={activeTodos} />
+      </div>
       <div className={styles.filters}>
         <div className={styles.empty}></div>
         <div className={styles.buttons}>
@@ -51,6 +51,7 @@ export default function Status({
             text="Completed"
           />
         </div>
+        <div className={styles.empty}></div>
       </div>
       <div className={styles.clear}>
         <button

@@ -10,9 +10,12 @@
 
 .items {
   justify-content: start;
-  flex-shrink: 0;
   display: flex;
   align-items: center;
+}
+
+.items > span {
+  flex-shrink: 0;
 }
 
 .filters {
@@ -51,7 +54,7 @@
   }
 }
 
-@media screen and (min-width: 454px) {
+@media screen and (min-width: 490px) {
   .status {
     grid-template-columns: auto 1fr auto;
     grid-template-rows: var(--status-height);
@@ -59,7 +62,7 @@
 
   .filters {
     grid-column-start: 2;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .empty {
@@ -67,7 +70,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 2.6rem;
+    max-width: 2.8rem;
   }
 
   .buttons {
